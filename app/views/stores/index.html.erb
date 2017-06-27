@@ -1,0 +1,53 @@
+<%= render 'shared/flash', flash: flash %>
+
+<div class="row">
+  <div class='col-xs-12'>
+    <h1 class="page-header">
+        Lojas
+        <small> - Listagem</small>
+    </h1>
+  </div>
+</div>
+<div class="row">
+  <div class='col-xs-12'>
+    <table class='datatable'>
+      <thead>
+        <tr>
+          <th>Proprietário</th>
+          <th>Nome da loja</th>
+          <th>Vendedor(es)</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @stores.each do |store| %>
+          <tr>
+            <td><%= store.user.full_name %></td>
+            <td><%= store.name %></td>
+            <td>
+              <% store.users.each do |user| %>
+                <span class="label label-default"><%=user.full_name%></span>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to 'Editar', edit_store_path(store) %>
+              <%= link_to 'Deletar', store, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-xs-12'>
+    <div class="pull-right">
+      <div class="form-actions">
+        <%= link_to 'New Store', new_store_path , class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

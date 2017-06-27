@@ -1,0 +1,6 @@
+pt-BR:
+  generic:
+    confirmation:
+      new: 'O registro foi criado com sucesso.'
+      edit: 'O registro foi editado com sucesso.'
+      delete: 'O reigstro foi deletado com sucesso.'

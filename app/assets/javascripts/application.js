@@ -12,5 +12,31 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require bootstrap
+//= require dataTables/jquery.dataTables
+//= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+//= require select2.full.min
 //= require_tree .
+
+$(document).ready(function() {
+  $('select').select2();
+  
+  $('.datatable').DataTable( {
+      responsive: true,
+      "language": {
+        'search': 'Pesquisar:',
+        'loadingRecords': 'Carregando registros...',
+        'lengthMenu': 'Exibindo _MENU_ registros por página',
+        'zeroRecords': 'Nenhum registro foi encontrado, desculpe.',
+        'info': 'Exibindo página _PAGE_ de _PAGES_',
+        'infoEmpty': 'Nenhum registro disponível',
+        'infoFiltered': '(filtrado de _MAX_ registros)',
+        paginate: {
+            first:      "Primeiro",
+            previous:   "Anterior",
+            next:       "Próximo",
+            last:       "Último"
+        }
+      }
+  });
+});
