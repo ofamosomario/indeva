@@ -1,0 +1,39 @@
+<%= simple_form_for(@goal) do |f| %>
+  <div class='row'>
+    <div class='col-xs-6'> 
+      <div class="form-group">
+      <%= f.input :name, input_html: { placeholder: 'Nome da meta' } , label: 'Nome da meta' %>
+      </div>
+    </div>
+    <div class='col-xs-6'> 
+      <div class="form-group">
+      <%= f.association :store, input_html: { placeholder: 'Loja' } , label: 'Loja', include_blank: false, collection: Store.get_user_store(current_user.id) %>
+      </div>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col-xs-4'> 
+      <div class="form-group">
+        <%= f.input :month, input_html: { placeholder: 'Mes de referência' } , label: 'Mes de referência' , collection: Goal.months.keys, include_blank: false %>
+      </div>
+    </div>
+    <div class='col-xs-4'> 
+      <div class="form-group">
+        <%= f.input :start_date, input_html: { placeholder: 'Data de início' } , label: 'Data de início' %>
+      </div>
+    </div>
+    <div class='col-xs-4'> 
+      <div class="form-group">
+        <%= f.input :end_date, input_html: { placeholder: 'Data de finalização' } , label: 'Data de finalização' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="clearfix form-actions">
+    <div class="col-md-12">
+      <div class="pull-right">
+        <%= f.button :submit , class: 'ace-icon fa fa-check bigger-110' %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,17 @@
+<div class="page-header">
+  <h1>
+    Meta diária
+    <small>
+      <i class="ace-icon fa fa-angle-double-right"></i>
+      Cadastro
+    </small>
+  </h1>
+</div>
+<%= render 'form', daily_goal: @daily_goal %>
+
+<div class="page-header">
+  <h1>
+    Histórico do mês
+  </h1>
+</div>
+<%= render 'history' , daily_goals: @daily_goals %>

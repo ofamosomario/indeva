@@ -6,15 +6,20 @@ class User < ApplicationRecord
 
 
   # MAP
+  
   has_many :users
+  has_many :goals
   has_and_belongs_to_many :stores
 
   # ENUM
   
   enum role: { 
-  	'proprietário': 0,
-  	'vendedor': 		1
+    'administrador':0,
+  	'proprietário': 1,
+  	'vendedor': 		2
   } 
+
+  # CUSTOM METHODS
 
   def self.get_just_owner
     select(:id , :full_name)

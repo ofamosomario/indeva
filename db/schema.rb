@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170627001152) do
+ActiveRecord::Schema.define(version: 20170628002620) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "daily_goals", force: :cascade do |t|
+    t.integer  "goal_id"
+    t.integer  "user_id"
+    t.date     "currently_date"
+    t.integer  "value"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "goals", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "store_id"
+    t.string   "name",        limit: 120,                          null: false
+    t.integer  "month",       limit: 2,                            null: false
+    t.date     "start_date",                                       null: false
+    t.date     "end_date",                                         null: false
+    t.decimal  "total_value",             precision: 10, scale: 2
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
+  end
 
   create_table "stores", force: :cascade do |t|
     t.integer  "user_id"

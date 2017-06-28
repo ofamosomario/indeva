@@ -1,0 +1,57 @@
+<div class="page-header">
+  <h1>
+    Metas
+    <small>
+      <i class="ace-icon fa fa-angle-double-right"></i>
+      Listagem
+    </small>
+  </h1>
+</div>
+<%= render 'shared/flash', flash: flash %>
+
+<div class="row">
+  <div class='col-xs-12'>
+    <table class='datatable'>
+      <thead>
+        <tr>
+          <th>Mes</th>
+          <th>Loja</th>
+          <th>Nome</th>
+          <th>Data de início</th>
+          <th>Data fim</th>
+          <th>Valor total</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @goals.each do |goal| %>
+          <tr>
+            <td><%= goal.month %></td>
+            <td><%= goal.name %></td>
+            <td><%= goal.store.name %></td>
+            <td><%= goal.start_date %></td>
+            <td><%= goal.end_date %></td>
+            <td><%= goal.total_value %></td>
+            <td>
+              <%= link_to '<span class="label label-success label-white middle">Metas diárias</span>'.html_safe, new_daily_goal_path(goal) %>
+              <%= link_to '<span class="label label-warning label-white middle">Editar</span>'.html_safe, edit_goal_path(goal) %>
+              <%= link_to '<span class="label label-danger label-white middle">Deletar</span>'.html_safe, goal, method: :delete, data: { confirm: 'Você tem certeza?' } %>
+              
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="clearfix form-actions">
+  <div class="col-md-12">
+    <div class="pull-right">
+      <%= link_to 'Nova meta', new_goal_path , class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
+
+

@@ -1,13 +1,14 @@
+<div class="page-header">
+  <h1>
+    Lojas
+    <small>
+      <i class="ace-icon fa fa-angle-double-right"></i>
+      Listagem
+    </small>
+  </h1>
+</div>
 <%= render 'shared/flash', flash: flash %>
 
-<div class="row">
-  <div class='col-xs-12'>
-    <h1 class="page-header">
-        Lojas
-        <small> - Listagem</small>
-    </h1>
-  </div>
-</div>
 <div class="row">
   <div class='col-xs-12'>
     <table class='datatable'>
@@ -31,8 +32,8 @@
               <% end %>
             </td>
             <td>
-              <%= link_to 'Editar', edit_store_path(store) %>
-              <%= link_to 'Deletar', store, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to '<span class="label label-warning label-white middle">Editar</span>'.html_safe, edit_store_path(store) %>
+              <%= link_to '<span class="label label-success label-white middle">Deletar</span>'.html_safe, store, method: :delete, data: { confirm: 'Você tem certeza?' } %>
             </td>
           </tr>
         <% end %>
@@ -40,12 +41,11 @@
     </table>
   </div>
 </div>
-<div class='row'>
-  <div class='col-xs-12'>
+
+<div class="clearfix form-actions">
+  <div class="col-md-12">
     <div class="pull-right">
-      <div class="form-actions">
-        <%= link_to 'New Store', new_store_path , class: 'btn btn-primary' %>
-      </div>
+      <%= link_to 'Nova loja', new_store_path , class: 'btn btn-primary' %>
     </div>
   </div>
 </div>

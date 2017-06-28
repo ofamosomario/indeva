@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Goal:</strong>
+  <%= @daily_goal.goal_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @daily_goal.user_id %>
+</p>
+
+<p>
+  <strong>Currently date:</strong>
+  <%= @daily_goal.currently_date %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @daily_goal.value %>
+</p>
+
+<%= link_to 'Edit', edit_daily_goal_path(@daily_goal) %> |
+<%= link_to 'Back', daily_goals_path %>

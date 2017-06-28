@@ -1,10 +1,30 @@
-<div class="collapse navbar-collapse navbar-ex1-collapse">
-  <ul class="nav navbar-nav side-nav">
-    <li>
-        <a href="<%=stores_path%>"><i class="fa fa-fw fa-dashboard"></i> Lojas</a>
-    </li>
-    <li>
-        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Vendedores</a>
-    </li>
-  </ul>
-</div>
+<ul class="nav nav-list">
+  <li class="">
+    <a href="<%=stores_path%>">
+      <i class="menu-icon fa fa-tachometer"></i>
+      <span class="menu-text"> Lojas </span>
+    </a>
+    <b class="arrow"></b>
+  </li>
+
+  <li class="">
+    <a href="#" class="dropdown-toggle">
+      <i class="menu-icon fa fa-desktop"></i>
+      <span class="menu-text">
+        Vendedores
+      </span>
+
+      <b class="arrow fa fa-angle-down"></b>
+    </a>
+    <b class="arrow"></b>
+  </li>
+
+  <li class="">
+    <a href="<%=goals_path%>">
+      <i class="menu-icon fa fa-tachometer"></i>
+      <span class="menu-text"> Suas metas </span>
+    </a>
+    <b class="arrow"></b>
+  </li>
+  </li>
+</ul>

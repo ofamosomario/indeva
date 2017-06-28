@@ -1,0 +1,29 @@
+<%= render 'shared/flash', flash: flash %>
+<% if !@daily_goals.nil? %>
+<div class="row">
+  <div class='col-xs-12'>
+    <table class='datatable'>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Valor</th>
+          <th>Total</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @total = 0 %>
+        <% @daily_goals.each do |goal| %>
+          <tr>
+            <td><%= goal.currently_date %></td>
+            <td><%= goal.value %></td>
+            <td><%=@total = @total + goal.value%></td>
+            <td><%= link_to '<span class="label label-danger label-white middle">Deletar</span>'.html_safe, goal, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<% end %>

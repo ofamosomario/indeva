@@ -1,0 +1,22 @@
+<%= simple_form_for(@daily_goal) do |f| %>
+  <div class='row'>
+    <input type='hidden' name='daily_goal[goal_id]' id='daily_goal_goal_id' value='<%=@goal_id%>' />
+    <div class='col-xs-6'> 
+      <div class="form-group">
+        <%= f.input :currently_date, input_html: { placeholder: 'Data' } , label: 'Data' %>
+      </div>
+    </div>
+    <div class='col-xs-6'> 
+      <div class="form-group">
+        <%= f.input :value, input_html: { placeholder: 'Valor' } , label: 'Valor' %>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix form-actions">
+    <div class="col-md-12">
+      <div class="pull-right">
+        <%= f.button :submit , class: 'ace-icon fa fa-check bigger-110' %>
+      </div>
+    </div>
+  </div>
+<% end %>

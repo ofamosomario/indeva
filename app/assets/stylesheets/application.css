@@ -12,8 +12,11 @@
  *
  *= require_tree .
  *= require dataTables/jquery.dataTables
- *= require bootstrap
- *= require sb-admin
+ *= require bootstrap.min
+ *= require ace.min
+ *= require fonts.googleapis.com
+ *= require ace-skins.min
+ *= require ace-rtl.min
  *= require select2/css/core
  *= require dataTables/jquery.dataTables
  *= require_self
