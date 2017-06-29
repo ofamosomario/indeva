@@ -28,10 +28,28 @@
       <tbody>
         <% @goals.each do |goal| %>
           <tr>
-            <td><%= Date::MONTHNAMES[goal.month] %></td>
-            <td><%= goal.full_name %></td>
+            <td>
+              <% if current_user.proprietario? %>
+                <%= goal.month %>
+              <% else %>
+                <%= Date::MONTHNAMES[goal.month] %>
+              <% end %>
+            </td>
+            <td>
+              <% if current_user.proprietario? %>
+                <%= goal.user.full_name %>
+              <% else %>
+                <%= goal.full_name %>
+              <% end %>
+            </td>
             <td><%= goal.name %></td>
-            <td><%= goal.store_name %></td>
+            <td>
+              <% if current_user.proprietario? %>
+                <%= goal.store.name %>
+              <% else %>
+                <%= goal.store_name %>
+              <% end %>
+            </td>
             <td><%= l goal.start_date %></td>
             <td><%= l goal.end_date %></td>
             <td><%= goal.total_value %></td>
