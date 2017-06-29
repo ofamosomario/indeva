@@ -1,19 +1,30 @@
 # README
 
-### Sistema de Gestão de Funcionários com meta(s)
+## Manager System for Store(s) - SMS
+### A user can be Owner or Seller. The owner can have multiple stores, and each stores can have one or 'N' sellers. The owner can create goals, and the sellers can create daily goals. The daily goals will be split equal for sellers. Can't have one daily goal using the same date.
 
-# Como usar:
+# How To:
 
-* rode os comandos a seguir: rake db:create db:migrate db:seed
+* Run these comands in your terminal: rake db:create db:migrate db:seed
 
-* após isso, inicialize o servidor.
+* So then, start the server typing rails s.
 
-# Usuários disponíveis no sistema:
+# Users allowed:
 
-* mario@gmail.com | 123mudar : Dono de loja.
+* mario@gmail.com | 123mudar : Store Owner.
 
-* ricardo@gmail.com | 123mudar : Vendedor
+* ricardo@gmail.com | 123mudar : Seller
 
-* bernardo@gmail.com | 123mudar : Vendedor
+* bernardo@gmail.com | 123mudar : Seller
 
-* ananinas@gmail.com | 123mudar : Vendedor
+* ananinas@gmail.com | 123mudar : Seller
+
+# Important Gems:
+
+* Devise for authentication
+
+* Simple form
+
+* DataTable
+
+#### Heroku Website: https://indevapp.herokuapp.com
