@@ -4,7 +4,11 @@ class GoalsController < ApplicationController
   # GET /goals
   # GET /goals.json
   def index
-    @goals = Store.get_users_store current_user.id
+    if current_user.proprietario?
+      @goals = Store.user_id current_user.id
+    else
+      @goals = Store.get_users_store current_user.id
+    end
   end
 
   # GET /goals/1
