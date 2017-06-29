@@ -4,3 +4,5 @@ pt-BR:
       new: 'O registro foi criado com sucesso.'
       edit: 'O registro foi editado com sucesso.'
       delete: 'O reigstro foi deletado com sucesso.'
+    permition:
+      not_allowed: 'Você não tem permissão para acessar essa página.'

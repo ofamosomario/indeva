@@ -1,6 +1,6 @@
 class DailyGoalsController < ApplicationController
   before_action :set_daily_goal, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /daily_goals
   # GET /daily_goals.json
   def index
@@ -17,6 +17,7 @@ class DailyGoalsController < ApplicationController
     @goal_id = params[:format]
     @daily_goal = DailyGoal.new
     @daily_goals = DailyGoal.where(user_id: current_user.id , goal_id: @goal_id)
+    @users_goals = DailyGoal.get_sellers_goals @goal_id
   end
 
   # GET /daily_goals/1/edit

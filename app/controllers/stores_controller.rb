@@ -1,10 +1,10 @@
 class StoresController < ApplicationController
   before_action :set_store, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /stores
   # GET /stores.json
   def index
-    @stores = Store.all
+    @stores = Store.where(user_id: current_user.id)
   end
 
   # GET /stores/1
@@ -14,7 +14,11 @@ class StoresController < ApplicationController
 
   # GET /stores/new
   def new
-    @store = Store.new
+    if current_user.proprietario?
+      @store = Store.new
+    else
+      redirect_to goals_url, notice: I18n.t(:not_allowed, scope: [:generic, :permition])
+    end
   end
 
   # GET /stores/1/edit
@@ -24,7 +28,7 @@ class StoresController < ApplicationController
   # POST /stores
   # POST /stores.json
   def create
-    @store = Store.new(store_params)
+    @store = Store.new(store_params.merge(user_id: current_user.id))
 
     respond_to do |format|
       if @store.save

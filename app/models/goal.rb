@@ -20,6 +20,7 @@ class Goal < ApplicationRecord
 	# MAP
 	belongs_to :user
 	belongs_to :store
+	has_many :daily_goals
 
 	# VALIDATIONS
   validates :name, length: {maximum: 120 , minimum: 3}, presence: true

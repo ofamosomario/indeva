@@ -5,10 +5,6 @@
       <div class="form-group">
         <%= f.input :name , input_html: { placeholder: 'Nome da loja' } , label: 'Nome da loja' %>
       </div>
-
-      <div class="form-group">
-        <%= f.association :user , input_html: { placeholder: 'Proprietário' } , label: 'Proprietário', collection: User.get_just_owner, prompt: "Proprietário da loja", label_method: :full_name %>
-      </div>
       <div class="form-group">
         <%= f.association :users , label: 'Selecione um ou mais vendedor', include_blank: false, input_html: {multiple: true} , label_method: :full_name , collection: User.get_sellers %>        
       </div>

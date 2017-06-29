@@ -9,13 +9,13 @@ class User < ApplicationRecord
   
   has_many :users
   has_many :goals
+  has_many :daily_goals
   has_and_belongs_to_many :stores
 
   # ENUM
   
   enum role: { 
-    'administrador':0,
-  	'proprietário': 1,
+  	'proprietario': 1,
   	'vendedor': 		2
   } 
 
@@ -23,13 +23,13 @@ class User < ApplicationRecord
 
   def self.get_just_owner
     select(:id , :full_name)
-    .where(role: 0)
+    .where(role: 1)
     .order(:full_name)
   end
 
   def self.get_sellers
     select(:id , :full_name)
-    .where(role: 1)
+    .where(role: 2)
     .order(:full_name)
   end
 

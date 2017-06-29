@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Sistema de Gestão de Funcionários com meta(s)
 
-Things you may want to cover:
+# Como usar:
 
-* Ruby version
+* rode os comandos a seguir: rake db:create db:migrate db:seed
 
-* System dependencies
+* após isso, inicialize o servidor.
 
-* Configuration
+# Usuários disponíveis no sistema:
 
-* Database creation
+* mario@gmail.com | 123mudar : Dono de loja.
 
-* Database initialization
+* ricardo@gmail.com | 123mudar : Vendedor
 
-* How to run the test suite
+* bernardo@gmail.com | 123mudar : Vendedor
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* ananinas@gmail.com | 123mudar : Vendedor

@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 20170628002620) do
     t.integer  "goal_id"
     t.integer  "user_id"
     t.date     "currently_date"
-    t.integer  "value"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.decimal  "value",          precision: 10, scale: 2
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
   end
 
   create_table "goals", force: :cascade do |t|

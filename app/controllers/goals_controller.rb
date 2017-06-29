@@ -1,10 +1,10 @@
 class GoalsController < ApplicationController
   before_action :set_goal, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /goals
   # GET /goals.json
   def index
-    @goals = Goal.all
+    @goals = Store.get_users_store current_user.id
   end
 
   # GET /goals/1
@@ -14,7 +14,11 @@ class GoalsController < ApplicationController
 
   # GET /goals/new
   def new
-    @goal = Goal.new
+    if current_user.proprietario?
+      @goal = Goal.new
+    else
+      redirect_to goals_url, notice: I18n.t(:not_allowed, scope: [:generic, :permition])
+    end
   end
 
   # GET /goals/1/edit
