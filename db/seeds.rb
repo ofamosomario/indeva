@@ -12,8 +12,3 @@ User.create([
 	{full_name: 'Bernardo' , email: 'bernardo@gmail.com' , password: '123mudar' , password_confirmation: '123mudar' , role: 2},
 	{full_name: 'Ananinas' , email: 'ananinas@gmail.com' , password: '123mudar' , password_confirmation: '123mudar' , role: 1}
 ])
-
-Store.create([
-	{name: 'ToyLand' , user_id: 1 },
-	{name: 'SoccerField' , user_id: 4 }
-])
