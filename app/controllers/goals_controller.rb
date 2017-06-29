@@ -5,7 +5,7 @@ class GoalsController < ApplicationController
   # GET /goals.json
   def index
     if current_user.proprietario?
-      @goals = Store.user_id current_user.id
+      @goals = Store.where(user_id: current_user.id) 
     else
       @goals = Store.get_users_store current_user.id
     end
