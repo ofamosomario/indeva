@@ -1,7 +1,7 @@
 # README
 
 ## Manager System for Store(s) - SMS
-### A user can be Owner or Seller. The owner can have multiple stores, and each stores can have one or 'N' sellers. The owner can create goals, and the sellers can create daily goals. The daily goals will be split equal for sellers. Can't have one daily goal using the same date.
+#### A user can be Owner or Seller. The owner can have multiple stores, and each stores can have one or 'N' sellers. The owner can create goals, and the sellers can create daily goals. The daily goals values will be split equal for sellers. Can't have one daily goal using the same date.
 
 # How To:
 
@@ -28,3 +28,5 @@
 * DataTable
 
 #### Heroku Website: https://indevapp.herokuapp.com
+
+#### Questions? mario@greenmelon.com.br
